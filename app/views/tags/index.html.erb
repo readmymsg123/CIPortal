@@ -1,0 +1,15 @@
+<title>Tags</title>
+
+<h1>Tags</h1>
+<table>
+	<th>Tag Name
+	<th>Number of Posts</th>
+
+<% @tags.each do |t|%>
+  <tr>
+	<td><%= link_to t.name.capitalize, tag_path(t)%></td>
+	<td><%= @a.shift %>
+	<% end %>
+</table>	
+
+

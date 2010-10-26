@@ -1,0 +1,45 @@
+<h1>Post</h1>
+
+<p>
+  <b>Id:</b>
+  <%=h @post.id %>
+</p>
+
+<% if @post.message_html? %>
+<%= @post.message_html %>
+<% end %>
+
+<p>
+  <b>Title:</b>
+  <%=h @post.title %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%=h @post.message %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= User.find(@post.user_id).username%>
+</p>
+
+
+<h2> Comments </h2>
+<table>
+	<tr>
+		<td>Comment Title | </td> 
+		<td>Comment Message </td> 
+	</tr>
+
+	<% @comments.each do |comment| %>	
+   <tr> 
+    <td><%=h comment.title %></td>
+    <td><%=h comment.message %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

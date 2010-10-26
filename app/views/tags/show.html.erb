@@ -1,0 +1,12 @@
+<h1><%= @tag.name.capitalize %></h1>
+<table>
+	<tr>
+		<th>Post Title</th>
+		<th>Created at</th>
+	
+<%  @posts.each do |p| %>
+	<tr>
+		<td><%= link_to p.title, post_path(p.id) %></td>
+		<td><%= p.created_at %>
+<% end -%>
+</table>

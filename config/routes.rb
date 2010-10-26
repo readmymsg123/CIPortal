@@ -1,4 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
+
+
+  map.root :controller => 'forum', :action => 'index'
+  map.resources :user_sessions
+  
+  map.resources :users
+  map.connect '/users/current/profile', :controller => "users", :action => "profile"
+
+  map.resources :posts, :has_many => :comments
+  map.resources :tags, :has_many => :posts
+  map.login "login", :controller => "user_sessions", :action => "new"
+  map.logout "logout", :controller => "user_sessions", :action => "destroy"
+  
+  map.connect '/users/current/show', :controller => "users", :action => "show"
+
+  map.resources :users do |users|
+    users.resources :messages, :collection => { :delete_selected => :post }
+  end
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -40,4 +58,8 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  HighVoltage::Routes.draw(map)
+  HighVoltage::Routes.draw(map)
+  HighVoltage::Routes.draw(map)
+  HighVoltage::Routes.draw(map)
 end
