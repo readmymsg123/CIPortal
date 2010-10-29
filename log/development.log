@@ -33127,3 +33127,29 @@ Processing UserSessionsController#new (for 127.0.0.1 at 2010-10-24 15:11:12) [GE
 Rendering template within layouts/application
 Rendering user_sessions/new
 Completed in 18ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ForumController#index (for 127.0.0.1 at 2010-10-29 14:29:33) [GET]
+  [4;36;1mPost Load (0.9ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC LIMIT 8 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering forum/index
+Completed in 82ms (View: 74, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-10-29 14:29:38) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-10-29 14:29:40) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.3ms)
+Completed in 27ms (View: 15, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-10-29 14:29:42) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 18ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
